@@ -26,6 +26,8 @@ function Annonce({ id, props }) {
   const [formDataPreview, setFormDataPreview] = useState({...props});
   const [annonceEnFavori, setAnnonceEnFavori] = useState(false);
 
+  console.log()
+
   useEffect(() => {
     setVerifiePostuler(props.eleves_postulants.some((eleve) => eleve.eleve === user.token))
     setNombrePostulant(props.eleves_postulants.length)
@@ -179,6 +181,7 @@ function Annonce({ id, props }) {
 
   // fonction accepter ou refuser un eleve qui postule
   const postulerChoix = (status, tokenEleve) => {
+    console.log('tokenEleve', tokenEleve)
     fetch('http://localhost:3000/professionnels/postuler/' + id + '/' + user.token, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -345,7 +348,7 @@ function Annonce({ id, props }) {
                           <>
                             {
                               (!editAnnonce && nombrePostulant > 0) &&
-                                <Button type='secondary' size='large' className="me-2" onClick={() => clickModalOpen(false)}>{ editAnnonce ? 'Annonce' : 'Postulants' }</Button>
+                                <Button type='secondary' size='large' className="me-2" onClick={() => clickModalOpen(false)}>Postulants</Button>
                             }
 
                             { !editAnnonce && <Button type="danger" size="large" onClick={() => HandleArchiverAnnonce()}>{ archiveAnnonce ? 'Désarchiver' : 'Archiver' }</Button> }
