@@ -41,7 +41,7 @@ function ProfilEleve({ props }) {
 
   useEffect(() => {
     if (user.token) {
-      fetch("http://localhost:3000/eleves/" + user.token)
+      fetch("http://localhost:3000/eleves/token/" + user.token)
         .then((response) => response.json())
         .then((data) => {
           if (data.result) {

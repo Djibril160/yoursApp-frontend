@@ -18,7 +18,7 @@ function ProfilProfessionnel() {
 
   useEffect(() => {
     if (user.token) {
-      fetch('http://localhost:3000/professionnels/' + user.token)
+      fetch('http://localhost:3000/professionnels/token/' + user.token)
         .then(response => response.json())
         .then(data => {
           if(data.result){
