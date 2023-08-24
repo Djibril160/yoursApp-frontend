@@ -33,7 +33,7 @@ function ProfilEleve({ props }) {
   const dateFormat = "DD/MM/YYYY";
   const currentDate = dayjs();
 
-  const [messageApi, contextHolder] = message.useMessage();
+  const [messageApi, contextHolder] = message.useMessage(); // ligne fournie par ANTD - https://ant.design/components/message
   const [isToken, setIsToken] = useState(false);
   const [editProfil, setIsEditProfil] = useState(false);
   const [formData, setFormData] = useState({ ...props });
