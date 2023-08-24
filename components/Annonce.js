@@ -33,7 +33,7 @@ function Annonce({ id, props }) {
     setNombrePostulant(props.eleves_postulants.length)
   }, []);
 
-  // fonction ouvrir modal
+  // fonction pour ouvrir modal
   const clickModalOpen = (boolean) => {
     setModal(true)
     setModalOpen(boolean) // (true > modal postuler / eleve) ou (false > modal postulants / pro)
