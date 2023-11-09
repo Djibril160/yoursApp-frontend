@@ -74,7 +74,7 @@ function Annonce({ id, props }) {
     setFormData({ ...formData });
   };
 
-  // fetch archiver une annonce
+  // fetch archiver une annonce 
   const HandleArchiverAnnonce = () => {
     const isArchive = archiveAnnonce ? false : true;
 
