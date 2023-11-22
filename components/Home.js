@@ -18,7 +18,7 @@ function Home() {
   const[resetMot_de_passe, setResetMot_de_passe] = useState("")
   const[reinitialisationMot_de_passe, setReinitialisationMot_de_passe] = useState("")
 
-  // fonction connexion utilisateur
+  // fonction connexion de l'utilisateur
   const handleConnection = () => {
     fetch('http://localhost:3000/connexion/', {
       method: 'POST',
