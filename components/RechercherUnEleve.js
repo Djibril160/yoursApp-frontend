@@ -18,7 +18,7 @@ function RechercherUnEleve () {
 
   // use Effect pour récupérer tous les élèves de la base de donnée au chargement du composant
   useEffect(() => {
-    fetch('http://localhost:3000/professionnels/recherche/eleves/'+ user.token)
+    fetch('https://yours-app-backend.vercel.app/professionnels/recherche/eleves/'+ user.token)
     .then(response => response.json())
     .then(data => {
       // ajouter les elèves de la bdd dans le tableau annonceData

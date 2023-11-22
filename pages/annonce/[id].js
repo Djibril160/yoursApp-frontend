@@ -14,7 +14,7 @@ export default function AnnoncePage() {
 
   useEffect(() => {
     // Faire une requête au backend pour obtenir les détails de l'annonce en utilisant le slug
-    fetch('http://localhost:3000/annonces/id/' + id + '/' + user.token)
+    fetch('https://yours-app-backend.vercel.app/annonces/id/' + id + '/' + user.token)
       .then((response) => response.json())
       .then((data) => {
 

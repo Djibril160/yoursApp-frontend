@@ -46,7 +46,7 @@ function Annonce({ id, props }) {
   const saveAnnonceClick = () => {
     if(!user.token) return;
 
-		fetch('http://localhost:3000/annonces/edit/' + id, {
+		fetch('https://yours-app-backend.vercel.app/annonces/edit/' + id, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...formDataPreview, token: user.token })
@@ -78,7 +78,7 @@ function Annonce({ id, props }) {
   const HandleArchiverAnnonce = () => {
     const isArchive = archiveAnnonce ? false : true;
 
-    fetch('http://localhost:3000/annonces/edit/' + id, {
+    fetch('https://yours-app-backend.vercel.app/annonces/edit/' + id, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ archive: isArchive, token: user.token })
@@ -116,7 +116,7 @@ function Annonce({ id, props }) {
   const postulerEleveAnnonce = () => {
     setModal(false)
 
-    fetch('http://localhost:3000/eleves/postuler/' + id + '/' + user.token, {
+    fetch('https://yours-app-backend.vercel.app/eleves/postuler/' + id + '/' + user.token, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: messagePostuler })
@@ -161,7 +161,7 @@ function Annonce({ id, props }) {
   // fetch mettre l'annonce en favoris
   //Ajout d'un message "ajouter avec succès / retirer des favoris"
   const mettreAnnonceEnFavori = () => {
-    fetch('http://localhost:3000/eleves/favoris/' + id + '/' + user.token, {
+    fetch('https://yours-app-backend.vercel.app/eleves/favoris/' + id + '/' + user.token, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
     }).then(response => response.json())
@@ -182,7 +182,7 @@ function Annonce({ id, props }) {
   // fonction accepter ou refuser un eleve qui postule
   const postulerChoix = (status, tokenEleve) => {
     console.log('tokenEleve', tokenEleve)
-    fetch('http://localhost:3000/professionnels/postuler/' + id + '/' + user.token, {
+    fetch('https://yours-app-backend.vercel.app/professionnels/postuler/' + id + '/' + user.token, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ token: tokenEleve, statut: status })

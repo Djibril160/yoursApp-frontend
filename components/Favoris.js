@@ -17,7 +17,7 @@ function Favoris() {
   const [recherche, setRecherche] = useState ('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/eleves/mesfavoris/' + user.token)
+    fetch('https://yours-app-backend.vercel.app/eleves/mesfavoris/' + user.token)
     .then(response => response.json())
     .then(data => {
       // afficher les favoris  de annonces de la bdd dans le tableau annonceData
