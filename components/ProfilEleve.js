@@ -41,7 +41,7 @@ function ProfilEleve({ props }) {
 
   useEffect(() => {
     if (user.token) {
-      fetch("https://yours-app-backend.vercel.app/eleves/token/" + user.token)
+      fetch("http://localhost:3000/eleves/token/" + user.token)
         .then((response) => response.json())
         .then((data) => {
           if (data.result) {
@@ -98,7 +98,7 @@ function ProfilEleve({ props }) {
 
     setFormData({ ...formDataPreview });
 
-    fetch("https://yours-app-backend.vercel.app/eleves/edit/" + user.token, {
+    fetch("http://localhost:3000/eleves/edit/" + user.token, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...formDataPreview }),

@@ -18,7 +18,7 @@ function ResetPassword() {
     };
 
     // Envoi de la requête POST au backend pour la réinitialisation du mot de passe
-    fetch('https://yours-app-backend.vercel.app/reinisialisermdp/reset-password', {
+    fetch('http://localhost:3000/reinisialisermdp/reset-password', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(requestData),

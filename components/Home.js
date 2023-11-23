@@ -20,7 +20,7 @@ function Home() {
 
   // fonction connexion de l'utilisateur
   const handleConnection = () => {
-    fetch('https://yours-app-backend.vercel.app/connexion/', {
+    fetch('http://localhost:3000/connexion/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: signInEmail, mot_de_passe: signInMot_de_passe }),
@@ -87,7 +87,7 @@ function Home() {
       fonction: formData.fonction,
     };
 
-    fetch('https://yours-app-backend.vercel.app/inscription', {
+    fetch('http://localhost:3000/inscription', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData)
@@ -120,7 +120,7 @@ function Home() {
     const requestData = {
       email: resetMot_de_passe,
     };
-    fetch('https://yours-app-backend.vercel.app/reinisialisermdp/forgot-password', {
+    fetch('http://localhost:3000/reinisialisermdp/forgot-password', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(requestData),
@@ -141,7 +141,7 @@ function Home() {
       mot_de_passe: mot_de_passe,
     }
 
-  fetch('https://yours-app-backend.vercel.app/reinisialisermdp/reset-password', {
+  fetch('http://localhost:3000/reinisialisermdp/reset-password', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(requestData),

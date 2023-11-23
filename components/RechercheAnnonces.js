@@ -20,7 +20,7 @@ function RechercheAnnonces () {
 
   // use Effect pour récupérer toutes les annonces de la base de donnée au chargement du composant
   useEffect(() => {
-    fetch('https://yours-app-backend.vercel.app/eleves/recherche/annonce/' + user.token)
+    fetch('http://localhost:3000/eleves/recherche/annonce/' + user.token)
     .then(response => response.json())
     .then(data => {
       // ajouter les annonces de la bdd dans le tableau annonceData

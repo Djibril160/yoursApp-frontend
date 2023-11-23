@@ -22,7 +22,7 @@ function AnnoncesList() {
 
   // use Effect pour récupérer toutes les annonces de la base de donnée
   useEffect(() => {
-    fetch('https://yours-app-backend.vercel.app/professionnels/mesannonces/' + user.token)
+    fetch('http://localhost:3000/professionnels/mesannonces/' + user.token)
     .then(response => response.json())
     .then(data => {
       // ajouter les annonces de la bdd dans le tableau annonceData
@@ -133,7 +133,7 @@ function AnnoncesList() {
     };
 
 
-    fetch('https://yours-app-backend.vercel.app/annonces/create/' + user.token, {
+    fetch('http://localhost:3000/annonces/create/' + user.token, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       // todo - retraiter le token :
